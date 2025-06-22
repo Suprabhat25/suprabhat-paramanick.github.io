@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>News & Publications – Suprabhat Paramanick</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      text-align: justify;
+    }
+    header {
+      background: #004080;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    section {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    footer {
+      background: #f0f0f0;
+      text-align: center;
+      padding: 1rem;
+    }
+    #quote-box {
+      height: 120px;
+      position: relative;
+      font-style: italic;
+      border-left: 3px solid #004080;
+      padding-left: 1rem;
+      overflow: hidden;
+    }
+    #quote-box .quote {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Quotes, News & Publications</h1>
+  <p><a href="index.html" style="color:white;">← Back to Home</a></p>
+</header>
+
+  <h2>📰 Recent Updates</h2>
+  <ul>
+    <li>Presented research on perovskite nanofibers at the ACS Spring 2025 Conference.</li>
+    <li>Received departmental travel grant for international symposium on Materials Chemistry.</li>
+    <li>Our recent publication on furan-linked thioether synthesis was accepted in <em>Journal of Organic Chemistry</em>.</li>
+  </ul>
+
+  <h2>📚 Selected Publications</h2>
+  <ol>
+    <li>
+      Suprabhat Paramanick, Samuel L. Rokhum, <strong>"Metal-Free Synthesis of Quinone-Based Furan-Linked Thioethers"</strong>, 
+      <em>Journal of Organic Chemistry</em>, 2023. 
+      <a href="https://doi.org/xxxxxxx" target="_blank">[DOI]</a>
+    </li>
+    <li>
+      Suprabhat Paramanick et al., <strong>"Core–Shell Perovskite@PMMA Nanofibers for Optical Sensing"</strong>, 
+      Manuscript in preparation, 2025.
+    </li>
+  </ol>
+</section>
+
+<footer>
+  © 2025 Suprabhat Paramanick   |  Made with ♥
+</footer>
+
+<script>
+  const quotes = document.querySelectorAll('#quote-box .quote');
+  let current = 0;
+
+  function showQuote(index) {
+    quotes.forEach((q, i) => {
+      q.style.opacity = i === index ? '1' : '0';
+    });
+  }
+
+  quotes.forEach((q) => q.style.opacity = '0');
+  showQuote(current);
+  setInterval(() => {
+    current = (current + 1) % quotes.length;
+    showQuote(current);
+  }, 5000);
+</script>
+
+</body>
+</html>
